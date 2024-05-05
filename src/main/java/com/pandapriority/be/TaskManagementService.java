@@ -1,5 +1,6 @@
-package com.pandabek;
+package com.pandapriority.be;
 
+import com.pandapriority.be.Task;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.pandabek;
+package com.pandapriority.be;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

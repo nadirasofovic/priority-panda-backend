@@ -1,4 +1,4 @@
-package com.pandabek;
+package com.pandapriority.be;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
