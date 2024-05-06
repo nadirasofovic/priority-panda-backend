@@ -1,4 +1,4 @@
-package com.pandapriority.be;
+package com.login.java.project;
 
 import org.springframework.stereotype.Service;
 
