@@ -1,4 +1,4 @@
-package com.example.pandaprioritype;
+package com.login.java.project;
 
 import org.springframework.web.bind.annotation.*;
 
