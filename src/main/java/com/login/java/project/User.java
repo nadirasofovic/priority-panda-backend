@@ -1,38 +1,33 @@
 package com.login.java.project;
 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.List;
 
-@Table(name = "users")
+import java.util.Set;
+
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
 
-        @Column(name = "email")
-        private String email;
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
 
-        @Column(name = "username")
-        private String username;
+    @Column(name = "password", nullable = false)
+    private String password;
 
-        @Column(name = "password")
-        private String password;
-
-
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Badge> badges;
 }
