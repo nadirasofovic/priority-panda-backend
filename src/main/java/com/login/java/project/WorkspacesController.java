@@ -1,4 +1,4 @@
-package com.pandapriority.be;
+package com.login.java.project;
 
 import org.springframework.web.bind.annotation.*;
 
@@ -39,4 +39,3 @@ public class WorkspacesController {
         return this.workspacesService.updateWorkspace(id,workspace);
     }
 }
-

@@ -1,6 +1,5 @@
-package com.pandapriority.be;
+package com.login.java.project;
 
-import com.pandapriority.be.repositories.WorkspaceRepository;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;

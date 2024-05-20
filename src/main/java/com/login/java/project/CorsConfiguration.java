@@ -1,4 +1,4 @@
-package com.pandapriority.be.config;
+package com.login.java.project;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
