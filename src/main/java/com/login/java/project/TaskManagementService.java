@@ -18,7 +18,7 @@ public class TaskManagementService {
         task1.setId(++taskIdCounter);
         task1.setTitle("Meeting");
         task1.setDescription("Hanadi and Ena need details");
-        task1.setDueDate(LocalDate.now().plusDays(7));
+
         task1.setPriority("High");
         task1.setLabel("Work");
         tasks.put(taskIdCounter, task1);
@@ -27,7 +27,7 @@ public class TaskManagementService {
         task2.setId(++taskIdCounter);
         task2.setTitle("Pay Bills");
         task2.setDescription("Water and Heating");
-        task2.setDueDate(LocalDate.now().plusDays(3));
+
         task2.setPriority("Medium");
         task2.setLabel("Finance");
         tasks.put(taskIdCounter, task2);
