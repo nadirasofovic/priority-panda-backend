@@ -1,58 +1,36 @@
 package com.login.java.project;
 
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import java.util.List;
+
+@Table(name = "workspace")
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Workspace {
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "dueDate")
     private String dueDate;
-    private String[] members;
 
-    public long getId() {
-        return this.id;
-    }
+    @ElementCollection
+    @CollectionTable(name = "workspace_members", joinColumns = @JoinColumn(name = "workspace_id"))
+    @Column(name = "members")
+    private List<String> members;
 
-    public String getTitle() {
-        return this.title;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public String getDueDate() {
-        return this.dueDate;
-    }
-
-    public String[] getMembers() {
-        return this.members;
-    }
-
-    public void setId(final long id) {
-        this.id = id;
-    }
-
-    public void setTitle(final String title) {
-        this.title = title;
-    }
-
-    public void setDescription(final String description) {
-        this.description = description;
-    }
-
-    public void setDueDate(final String dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public void setMembers(final String[] members) {
-        this.members = members;
-    }
-
-    public Workspace(final long id, final String title, final String description, final String dueDate, final String[] members) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.dueDate = dueDate;
-        this.members = members;
-    }
 }
