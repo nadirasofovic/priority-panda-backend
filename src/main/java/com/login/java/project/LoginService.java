@@ -1,66 +1,51 @@
 package com.login.java.project;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class LoginService {
 
-    private static Map<Long, User> users = new HashMap<>();
-    private static Long userIdCounter = 0L;
+    @Autowired
+    private UserRepository userRepository;
 
-    static {
-        User user1 = new User();
-        user1.setId(++userIdCounter);
-        user1.setEmail("nadira.sofovic@stu.ssst.edu.ba");
-        user1.setUsername("nadirasofovic");
-        user1.setPassword("password1");
-        users.put(userIdCounter, user1);
-
-        User user2 = new User();
-        user2.setId(++userIdCounter);
-        user2.setEmail("ena.frasto@stu.ssst.edu.ba");
-        user2.setUsername("enafrasto");
-        user2.setPassword("password2");
-        users.put(userIdCounter, user2);
-    }
     public String authenticate(String username, String password) {
-        return "Authentication successful";
+        User user = userRepository.findByUsername(username);
+        if (user != null && user.getPassword().equals(password)) {
+            return "Authentication successful";
+        }
+        return "Authentication failed";
     }
 
     public User getUserById(Long id) {
-        return users.get(id);
+        return userRepository.findById(id).orElse(null);
     }
 
     public String updateUser(Long id, User user) {
-        if (users.containsKey(id)) {
-            users.put(id, user);
+        if (userRepository.existsById(id)) {
+            user.setId(id);
+            userRepository.save(user);
             return "User updated successfully";
-        } else {
-            return "User not found";
         }
+        return "User not found";
     }
 
     public String deleteUser(Long id) {
-        if (users.containsKey(id)) {
-            users.remove(id);
+        if (userRepository.existsById(id)) {
+            userRepository.deleteById(id);
             return "User deleted successfully";
-        } else {
-            return "User not found";
         }
+        return "User not found";
     }
 
     public String createUser(User user) {
-        user.setId(++userIdCounter);
-        users.put(userIdCounter, user);
+        userRepository.save(user);
         return "User created successfully";
     }
 
     public List<User> getAllUsers() {
-        return new ArrayList<>(users.values());
+        return userRepository.findAll();
     }
 }

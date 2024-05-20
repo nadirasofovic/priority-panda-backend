@@ -1,5 +1,6 @@
 package com.login.java.project;
 
+
 import javax.persistence.Entity;
 
 import jakarta.persistence.*;
@@ -39,4 +40,4 @@ import java.util.List;
 
 
 
-}
+
