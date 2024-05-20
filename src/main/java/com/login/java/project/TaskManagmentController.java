@@ -1,23 +1,20 @@
 package com.login.java.project;
 
-
-import javax.persistence.Entity;
-
-import jakarta.persistence.*;
+public class TaskManagmentController {
+    import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.List;
 
-@Table(name = "tasks")
-@Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-
-    public class Task {
+    @Table(name = "workspace")
+    @Entity
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class Workspace {
         @Id
         @GeneratedValue
         private long id;
@@ -31,13 +28,10 @@ import java.util.List;
         @Column(name = "dueDate")
         private String dueDate;
 
-        @Column(name = "priority")
-        private String priority;
+        @ElementCollection
+        @CollectionTable(name = "workspace_members", joinColumns = @JoinColumn(name = "workspace_id"))
+        @Column(name = "members")
+        private List<String> members;
 
-        @Column(name = "label")
-        private String label;
     }
-
-
-
-
+}
