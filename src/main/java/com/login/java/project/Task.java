@@ -1,16 +1,12 @@
 package com.login.java.project;
 
-
-import javax.persistence.Entity;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.util.List;
 
-@Table(name = "tasks")
+@Table(name = "task")
 @Entity
 @Getter
 @Setter

@@ -6,15 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Table(name = "badge")
 @Entity
-@Table(name = "badges")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Badge {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
 
     @Column(name = "name")
