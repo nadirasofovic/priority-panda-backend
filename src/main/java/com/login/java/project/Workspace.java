@@ -1,6 +1,5 @@
 package com.login.java.project;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,9 +27,11 @@ public class Workspace {
     @Column(name = "dueDate")
     private String dueDate;
 
-    @ElementCollection
-    @CollectionTable(name = "workspace_members", joinColumns = @JoinColumn(name = "workspace_id"))
-    @Column(name = "members")
-    private List<String> members;
-
+    @ManyToMany
+    @JoinTable(
+            name = "workspace_members",
+            joinColumns = @JoinColumn(name = "workspace_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private List<User> members;
 }

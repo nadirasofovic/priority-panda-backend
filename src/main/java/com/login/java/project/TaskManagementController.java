@@ -1,6 +1,5 @@
 package com.login.java.project;
 
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -61,5 +60,9 @@ public class TaskManagementController {
     public String deleteExistingTask(@PathVariable Long id) {
         return this.taskManagementService.deleteTask(id);
     }
-}
 
+    @GetMapping("/priority/{priority}")
+    public List<Task> getTasksByPriority(@PathVariable String priority) {
+        return this.taskManagementService.getTasksByPriority(priority);
+    }
+}
