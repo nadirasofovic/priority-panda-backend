@@ -5,10 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.util.List;
 
-@Table(name = "workspace")
 @Entity
+@Table(name = "workspace")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -18,7 +19,7 @@ public class Workspace {
     @GeneratedValue
     private long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
     @Column(name = "description")
