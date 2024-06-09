@@ -36,3 +36,4 @@ public class Workspace {
     )
     private List<User> members;
 }
+
