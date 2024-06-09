@@ -1,8 +1,7 @@
 package com.login.java.project.services;
 
-import com.login.java.project.Workspace;
-import com.login.java.project.WorkspaceRepository;
-import com.login.java.project.WorkspacesService;
+import com.login.java.project.entities.Workspace;
+import com.login.java.project.repositories.WorkspaceRepository;
 import com.login.java.project.data.WorkspaceTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;

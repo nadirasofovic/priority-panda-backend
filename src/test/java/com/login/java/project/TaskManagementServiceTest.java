@@ -1,5 +1,8 @@
 package com.login.java.project;
 
+import com.login.java.project.entities.Task;
+import com.login.java.project.repositories.TaskRepository;
+import com.login.java.project.services.TaskManagementService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

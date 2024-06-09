@@ -1,5 +1,7 @@
 package com.login.java.project;
 
+import com.login.java.project.entities.User;
+import com.login.java.project.entities.Workspace;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

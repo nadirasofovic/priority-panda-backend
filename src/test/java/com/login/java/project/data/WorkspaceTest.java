@@ -1,7 +1,7 @@
 package com.login.java.project.data;
 
-import com.login.java.project.User;
-import com.login.java.project.Workspace;
+import com.login.java.project.entities.User;
+import com.login.java.project.entities.Workspace;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
