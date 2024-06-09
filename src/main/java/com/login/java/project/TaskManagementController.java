@@ -2,14 +2,7 @@ package com.login.java.project;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping({"/tasks"})
 @RestController
@@ -64,5 +57,30 @@ public class TaskManagementController {
     @GetMapping("/priority/{priority}")
     public List<Task> getTasksByPriority(@PathVariable String priority) {
         return this.taskManagementService.getTasksByPriority(priority);
+    }
+
+    @GetMapping("/sort/byDueDate")
+    public List<Task> sortByDueDate() {
+        return this.taskManagementService.sortByDueDate();
+    }
+
+    @GetMapping("/sort/byPriority")
+    public List<Task> sortByPriority() {
+        return this.taskManagementService.sortByPriority();
+    }
+
+    @GetMapping("/labels")  // Add this endpoint
+    public List<Task> getTasksByLabels(@RequestParam List<String> labels) {
+        return this.taskManagementService.getTasksByLabels(labels);
+    }
+
+    @GetMapping("/workspace/{workspaceId}/status/{status}")
+    public List<Task> getTasksByWorkspaceAndStatus(@PathVariable Long workspaceId, @PathVariable String status) {
+        return taskManagementService.getTasksByWorkspaceAndStatus(workspaceId, status);
+    }
+
+    @GetMapping("/status/{status}")
+    public List<Task> getTasksByStatus(@PathVariable String status) {
+        return taskManagementService.getTasksByStatus(status);
     }
 }

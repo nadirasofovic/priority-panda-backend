@@ -2,7 +2,7 @@ package com.login.java.project;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -50,5 +50,28 @@ public class TaskManagementService {
     public List<Task> getTasksByPriority(String priority) {
         return taskRepository.findByPriority(priority);
     }
-}
 
+    public List<Task> sortByDueDate() {
+        List<Task> tasks = taskRepository.findAll();
+        tasks.sort(Comparator.comparing(Task::getDueDate));
+        return tasks;
+    }
+
+    public List<Task> sortByPriority() {
+        List<Task> tasks = taskRepository.findAll();
+        tasks.sort(Comparator.comparing(Task::getPriority));
+        return tasks;
+    }
+
+    public List<Task> getTasksByLabels(List<String> labels) {
+        return taskRepository.findByLabelIn(labels);
+    }
+
+    public List<Task> getTasksByWorkspaceAndStatus(Long workspaceId, String status) {
+        return taskRepository.findByWorkspaceIdAndStatus(workspaceId, status);
+    }
+
+    public List<Task> getTasksByStatus(String status) {
+        return taskRepository.findByStatus(status);
+    }
+}

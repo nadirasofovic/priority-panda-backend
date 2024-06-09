@@ -1,5 +1,5 @@
 package com.login.java.project;
-import org.springframework.stereotype.Service;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +18,4 @@ public class BadgeService {
     public Badge createBadge(Badge badge) {
         return badgeRepository.save(badge);
     }
-
 }

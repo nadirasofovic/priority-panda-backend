@@ -23,6 +23,9 @@ public class Badge {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "complete")
+    private boolean complete; // New field
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

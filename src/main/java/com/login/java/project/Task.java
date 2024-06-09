@@ -6,34 +6,34 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "task")
 @Entity
+@Table(name = "task")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+public class Task {
 
-    public class Task {
-        @Id
-        @GeneratedValue
-        private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
 
-        @Column(name = "title")
-        private String title;
+    @Column(name = "title", nullable = false)
+    private String title;
 
-        @Column(name = "description")
-        private String description;
+    @Column(name = "description")
+    private String description;
 
-        @Column(name = "dueDate")
-        private String dueDate;
+    @Column(name = "due_date")
+    private String dueDate;
 
-        @Column(name = "priority")
-        private String priority;
+    @Column(name = "priority")
+    private String priority;
 
-        @Column(name = "label")
-        private String label;
-    }
-
+    @Column(name = "label")
+    private String label;
+}
 
 
 
