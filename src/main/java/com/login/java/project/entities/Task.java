@@ -38,8 +38,6 @@ public class Task {
     @Column(name = "priority")
     private String priority;
 
-    @Column(name = "label")
-    private String label;
 
     @Column(name = "creation_date")
     @Temporal(TemporalType.TIMESTAMP)
@@ -47,6 +45,9 @@ public class Task {
 
     @Column(name = "status")
     private String status;
+
+    @Column(name = "label")
+    private String label;
 
     @ManyToOne
     @JoinColumn(name = "workspace_id")

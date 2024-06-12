@@ -3,6 +3,7 @@ package com.login.java.project.services;
 import com.login.java.project.entities.Workspace;
 import com.login.java.project.repositories.WorkspaceRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -29,7 +30,7 @@ public class WorkspacesService {
         return workspace.orElse(null);
     }
 
-    public void deleteWorkspace (long id) {
+    public void deleteWorkspace(long id) {
         this.workspaceRepository.deleteById(id);
     }
 

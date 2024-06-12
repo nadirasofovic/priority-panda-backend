@@ -24,7 +24,7 @@ public class Badge {
     private String description;
 
     @Column(name = "complete")
-    private boolean complete; // New field
+    private boolean complete;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

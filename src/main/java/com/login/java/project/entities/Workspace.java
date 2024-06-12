@@ -1,7 +1,5 @@
 package com.login.java.project.entities;
 
-import com.login.java.project.entities.Task;
-import com.login.java.project.entities.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

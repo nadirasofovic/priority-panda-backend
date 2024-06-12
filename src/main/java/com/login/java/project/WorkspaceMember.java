@@ -42,33 +42,10 @@ class WorkspaceMemberId implements Serializable {
     @Column(name = "user_id")
     private Long userId;
 
-    // Default constructor
-    public WorkspaceMemberId() {}
-
-    // Parameterized constructor
-    public WorkspaceMemberId(Long workspaceId, Long userId) {
-        this.workspaceId = workspaceId;
-        this.userId = userId;
+    public WorkspaceMemberId() {
     }
 
-    // Getters and Setters
-    public Long getWorkspaceId() {
-        return workspaceId;
-    }
 
-    public void setWorkspaceId(Long workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    // Override equals and hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
